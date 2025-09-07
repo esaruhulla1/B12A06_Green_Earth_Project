@@ -27,6 +27,55 @@
 </head>
 
 <body class="max-w-[1920px] m-auto bg-[#f0fdf4]">
+    <header>
+        <nav class="bg-[#15803D] text-white">
+            <div class="navbar shadow-sm ">
+                <div class="navbar-start ml-10">
+                    <div class="dropdown">
+                        <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 6h16M4 12h8m-8 6h16" />
+                            </svg>
+                        </div>
+                        <ul tabindex="0"
+                            class="menu menu-sm dropdown-content bg-base-100 text-green-600 rounded-box z-1 mt-3 w-52 p-2 shadow">
+                            <li><a class="hover:border-b-2">About</a></li>
+                            <li><a class="hover:border-b-2">Gallery</a></li>
+                            <li><a class="hover:border-b-2">Plant a Tree</a></li>
+                        </ul>
+                    </div>
+                    <a class="font-semibold btn-ghost text-xl">Green Earth</a>
+                </div>
+                <div class="navbar-center hidden lg:flex">
+                    <ul class="menu menu-horizontal px-1">
+                        <li><a>About</a></li>
+                        <li><a>Gallery</a></li>
+                        <li><a>Plant a Tree</a></li>
+                    </ul>
+                </div>
+                <div class="navbar-end mr-10">
+                    <a class="btn max-h-8 bg-yellow-400 rounded-3xl border-none text-[#15803D] font-normal shadow-none">Plant
+                        a Tree</a>
+                </div>
+            </div>
+        </nav>
+
+        <section id="Banner" class="md:pt-6  flex flex-col md:flex-row md:justify-between bg-[#CFF0DC] space-y-4">
+            <div class="m-0"><img class="max-w-56 m-auto lg:max-w-full " src="./assets/hero-leaf1.png" alt=""></div>
+            <div class="flex flex-col  justify-center items-center space-y-5 md:space-y-2 lg:space-y-5">
+                <h1 class=" text-xl md:text-2xl lg:text-4xl  font-bold">Plant a Tree, Grow a Future</h1>
+                <p class="text-balance lg:text-nowrap text-center text-sm text-[#425158]">Join our mission to plant 1
+                    million trees and make the Earth greener for future
+                    <br> generations.
+                </p>
+                <a class=" btn  bg-yellow-400 rounded-3xl border-none text-[#15803D] font-medium">Get Involved</a>
+            </div>
+            <div class=" hidden md:block"><img class="max-w-56 m-auto lg:max-w-full" src="./assets/hero-leaf2.png"
+                    alt=""></div>
+        </section>
+    </header>
 
     <script src="./script.js"></script>
 </body>
