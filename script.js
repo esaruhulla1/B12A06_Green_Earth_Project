@@ -15,8 +15,8 @@ const loadAllCard = ()=>{
     }))
 }
 const showAllCard = (plants)=>{
+    cardContainer.innerHTML= ""
     plants.forEach(plant=>{
-        
         cardContainer.innerHTML +=`
                 <div class="card bg-white  shadow-sm p-3 ">
                     <figure class="h-48 max-w-80">
@@ -56,7 +56,7 @@ const loadCategories = ()=>{
 const showCategories = (categories)=>{
     categories.forEach(category => {
         CategoriesContainer.innerHTML +=`
-                    <h2 onclick="loadCardByCategory(${category.id})" class="p-1 pl-2 text-lg rounded-sm hover:bg-[#03a73f] hover:text-white cursor-pointer">${category.category_name}</h2>
+                    <h2 id="categoryItem${category.id}" onclick="loadCardByCategory(${category.id})" class="category-items p-1 pl-2 text-lg rounded-sm hover:bg-[#03a73f] hover:text-white cursor-pointer">${category.category_name}</h2>
 
         `  
     });
@@ -64,11 +64,21 @@ const showCategories = (categories)=>{
 loadCategories()
 
 
+const removeActive =  ()=>{
+    const categoryItems = document.querySelectorAll(".category-items")
+    categoryItems.forEach(item=>{
+        item.classList.remove("active")
+    })
+}
 //card by Category
 const loadCardByCategory= (id)=>{
     fetch(`https://openapi.programming-hero.com/api/category/${id}`)
     .then(res=>res.json())
     .then(data=>{
+        removeActive();
+        const clickcategoryItem = document.getElementById(`categoryItem${id}`)
+        clickcategoryItem.classList.add('active');
+
         showCardByCategory(data.plants)
     })
     .catch((err=>{
