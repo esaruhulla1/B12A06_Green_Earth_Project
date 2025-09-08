@@ -27,7 +27,7 @@
 </head>
 
 <body class="max-w-[1920px] m-auto bg-[#f0fdf4]">
-    <header>
+    <header class="mb-20">
         <nav class="bg-[#15803D] text-white">
             <div class="navbar shadow-sm ">
                 <div class="navbar-start ml-1 sm:ml-3 md:ml-10 mr-1">
@@ -78,15 +78,52 @@
     </header>
 
     <main class="w-10/12 m-auto">
-        <h1>Choose Your Trees</h1>
-        <div class="">
-            <aside class="w-2/12"></aside>
-            <section class="w-8/12"></section>
-            <aside class="w-2/12"></aside>
+        <h1 class="text-center text-3xl font-semibold mb-10">Choose Your Trees</h1>
+
+
+        <!-- Functionalities -->
+
+        <div class="flex gap-5">
+            <!-- left side -->
+            <aside class="w-2/12 ">
+                <h2 class="text-xl font-bold mb-2">Categories</h2>
+                <div id="categories-container" class="space-y-1.5">
+
+                </div>
+            </aside>
+
+
+            <!-- center -->
+            <section id="card-container" class="w-8/12  grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3 gap-9">
+                 <!-- <div class="card bg-white  shadow-sm p-3 ">
+                    <figure class="h-48 max-w-64">
+                        <img class="" src="${plant.image}" />
+                    </figure>
+                    <div class="space-y-3">
+                        <h2 class="font-semibold mt-2">Mango Tree</h2>
+                        <p class="text-[#4c545f] text-ellipsis line-clamp-3 md:line-clamp-6">A fast-growing tropical tree that produces delicious, juicy mangoes
+                            during summer. Its dense green</p>
+                        <div class="card-actions justify-between">
+                            <div class="bg-[#dcfce7] text-[#15803d] rounded-xl p-1 px-3">Fruit Tree</div>
+                            <div class="font-bold">৳500</div>
+                        </div>
+                        <button class="btn w-full rounded-2xl bg-[#15803d] text-white">Add to Cart</button>
+                    </div>
+                </div> -->
+                
+            </section>
+
+            <!-- Right side -->
+            <aside class="w-2/12 bg-white">
+                <h2 class="text-xl font-bold ">Your Cart</h2>
+            </aside>
         </div>
+
+        <!-- Functionalities -->
+
+
+
     </main>
-
-
 
     <!-- about section -->
     <section class="w-10/12 m-auto ">
