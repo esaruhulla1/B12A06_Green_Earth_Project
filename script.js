@@ -23,7 +23,7 @@ const showAllCard = (plants)=>{
                         <img class="" src="${plant.image}" />
                     </figure>
                     <div class="space-y-3">
-                        <h2 class="font-semibold mt-2">${plant.name}</h2>
+                        <h2 onclick="loadPlantsDetail(${plant.id})"  class="cursor-pointer card-title font-semibold mt-2">${plant.name}</h2>
                         <p class="text-[#4c545f]  overflow-hidden text-ellipsis line-clamp-3">${plant.description}</p>
                         <div class="card-actions justify-between">
                             <div class="bg-[#dcfce7] text-[#15803d] rounded-xl p-1 px-3">${plant.category}</div>
@@ -84,7 +84,7 @@ const showCardByCategory= (plants)=>{
                         <img class="" src="${plant.image}" />
                     </figure>
                     <div class="space-y-3">
-                        <h2 class="font-semibold mt-2">${plant.name}</h2>
+                        <h2 onclick="loadPlantsDetail(${plant.id})"  class="cursor-pointer card-title font-semibold mt-2">${plant.name}</h2>
                         <p class="text-[#4c545f]  overflow-hidden text-ellipsis line-clamp-3">${plant.description}</p>
                         <div class="card-actions justify-between">
                             <div class="bg-[#dcfce7] text-[#15803d] rounded-xl p-1 px-3">${plant.category}</div>
@@ -96,5 +96,44 @@ const showCardByCategory= (plants)=>{
         `
     })
 
+    
+}
+
+
+// modal
+const loadPlantsDetail = (id)=>{
+    fetch(`https://openapi.programming-hero.com/api/plant/${id}`)
+    .then((res)=>res.json())
+    .then(data=>{
+        showPlantsDetail(data.plants);
+    })
+
+const showPlantsDetail = (plant)=>{
+    const detailsContainer = document.getElementById("details-container")
+    detailsContainer.innerHTML = `
+                            <h1 class="text-3xl font-bold">${plant.name}</h1>
+                            <img class="w-full h-72 object-cover rounded-xl" src="${plant.image}" alt="">
+                            <h2 class="text-xl font-bold">Category: <span class="text-base font-normal">${plant.category}</span></h2>
+                            <h2 class="text-xl font-bold">Price: <span class="text-base font-normal">$${plant.price}</span></h2>
+                            <h2 class="text-xl font-bold">Description: <span class="text-base font-normal">${plant.description}</span></h2>
+    `
+   document.getElementById("plant_modal").showModal();
+}
+
+
+
+    // const cardTitle = document.querySelectorAll(".card-title");
+    // console.log(cardTitle);
+    
+    // // console.log(cardTitle);
+    // cardContainer.addEventListener('click', (e)=>{
+    //     // console.log(e.target);
+    //     if (e.target.classList==='cardTitle') {
+    //         console.log("hello");
+            
+    //     }
+        
+    // })
+    
     
 }
