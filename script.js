@@ -19,7 +19,7 @@ const showAllCard = (plants)=>{
     plants.forEach(plant=>{
         cardContainer.innerHTML +=`
                 <div class="card bg-white  shadow-sm p-3 ">
-                    <figure class="h-48 max-w-80">
+                    <figure class="h-96 md:h-48 object-cover">
                         <img class="" src="${plant.image}" />
                     </figure>
                     <div class="space-y-3">
@@ -90,7 +90,7 @@ const showCardByCategory= (plants)=>{
     plants.forEach((plant)=>{
     cardContainer.innerHTML +=`
                 <div class="card bg-white  shadow-sm p-3 ">
-                    <figure class="h-48 max-w-80">
+                    <figure class="h-96 md:h-48 object-cover">
                         <img class="" src="${plant.image}" />
                     </figure>
                     <div class="space-y-3">
