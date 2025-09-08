@@ -118,6 +118,8 @@ const loadPlantsDetail = (id)=>{
         showPlantsDetail(data.plants);
     })
 
+
+}
 const showPlantsDetail = (plant)=>{
     const detailsContainer = document.getElementById("details-container")
     detailsContainer.innerHTML = `
@@ -128,22 +130,4 @@ const showPlantsDetail = (plant)=>{
                             <h2 class="text-xl font-bold">Description: <span class="text-base font-normal">${plant.description}</span></h2>
     `
    document.getElementById("plant_modal").showModal();
-}
-
-
-
-    // const cardTitle = document.querySelectorAll(".card-title");
-    // console.log(cardTitle);
-    
-    // // console.log(cardTitle);
-    // cardContainer.addEventListener('click', (e)=>{
-    //     // console.log(e.target);
-    //     if (e.target.classList==='cardTitle') {
-    //         console.log("hello");
-            
-    //     }
-        
-    // })
-    
-    
 }
