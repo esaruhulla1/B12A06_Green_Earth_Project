@@ -91,12 +91,12 @@ const showCardByCategory = (plants) => {
     cardContainer.innerHTML = ""
     plants.forEach((plant) => {
         cardContainer.innerHTML += `
-                <div class="card bg-white  shadow-sm p-3 ">
+                <div class="card bg-white  shadow-sm p-3 max-h-[450px]">
                     <figure class="h-96 md:h-48 object-cover">
                         <img class="" src="${plant.image}" />
                     </figure>
                     <div class="space-y-3">
-                        <h2 onclick="loadPlantsDetail(${plant.id})"  class="cursor-pointer card-title font-semibold mt-2">${plant.name}</h2>
+                        <h2 onclick="loadPlantsDetail(${plant.id})"  class="cursor-pointer card-title font-semibold mt-2 ">${plant.name}</h2>
                         <p class="text-[#4c545f]  overflow-hidden text-ellipsis line-clamp-3">${plant.description}</p>
                         <div class="card-actions justify-between">
                             <div class="bg-[#dcfce7] text-[#15803d] rounded-xl p-1 px-3">${plant.category}</div>
