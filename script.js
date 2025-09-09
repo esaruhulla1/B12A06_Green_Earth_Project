@@ -1,6 +1,7 @@
 const CategoriesContainer = document.getElementById('categories-container')
 const cardContainer = document.getElementById('card-container')
 const addToCardContainer = document.getElementById('add-to-card-container')
+const totalPriceContainer = document.getElementById('total_price')
 
 // All defould card
 const loadAllCard = () => {
@@ -144,10 +145,21 @@ const addToCart = (name, price) => {
                             <h2 class="text-lg font-bold">${name}</h2>
                             <h3>$<span>${price}</span> × 1</h3>
                         </div>
-                        <span>❌</span>
+                        <span id="add-to-cart-item-icon" onclick="removeItem(this,${price})">❌</span>
                     </div>
                 
     `;
     addToCardContainer.appendChild(item);
 
+    // total Price
+    const newTotalPrice = Number(totalPriceContainer.innerText)
+    document.getElementById('total_price').innerText =newTotalPrice+price ;  
+
 }
+
+const removeItem =(element, price)=>{
+    element.parentElement.parentElement.remove();
+
+    const newTotalPrice = Number(totalPriceContainer.innerText)
+    document.getElementById('total_price').innerText = newTotalPrice - price;
+    }
