@@ -102,7 +102,7 @@ const showCardByCategory = (plants) => {
                             <div class="bg-[#dcfce7] text-[#15803d] rounded-xl p-1 px-3">${plant.category}</div>
                             <div class="font-bold">৳${plant.price}</div>
                         </div>
-                        <button class="btn w-full rounded-2xl bg-[#15803d] text-white">Add to Cart</button>
+                        <button onclick="addToCart('${plant.name}', ${plant.price})" class="btn w-full rounded-2xl bg-[#15803d] text-white">Add to Cart</button>
                     </div>
                 </div>
         `
@@ -136,7 +136,7 @@ const showPlantsDetail = (plant) => {
 
 // add to card
 const addToCart = (name, price) => {
-
+    alert(`${name} has been added on the card`)
     item = document.createElement("div");
     item.classList.add("p-2");
     item.innerHTML = `
@@ -145,7 +145,7 @@ const addToCart = (name, price) => {
                             <h2 class="text-lg font-bold">${name}</h2>
                             <h3>$<span>${price}</span> × 1</h3>
                         </div>
-                        <span id="add-to-cart-item-icon" onclick="removeItem(this,${price})">❌</span>
+                        <span class="cursor-pointer hover:scale-110" onclick="removeItem(this,${price})">❌</span>
                     </div>
                 
     `;
